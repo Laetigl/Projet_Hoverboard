@@ -1,21 +1,49 @@
-// let colors = [rgba(245, 40, 145, 0.8),rgba(135, 239, 108, 0.8),rgba(255, 19, 6, 0.8),rgba(255, 19, 255, 0.8),rgba(255, 220, 18, 0.8),rgba(110, 207, 255, 0.8)] //list of colors
+//Styling the title
+let titleIcecream = document.querySelector("h1")
+titleIcecream.style.fontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
+titleIcecream.style.fontWeight="bold"
+titleIcecream.style.textShadow="#E96F92 1px 0 10px"
+titleIcecream.style.color="white"
+
+//Liste of defined colors
+let colors = ["#FF5733","#FFFF33","#88883C","#4DBAE2","#4D62E2",'#68E24D',"#16401C","#FA6D96"]
+
+//Random colors
+function mixcolor() {
+    let randomColors = Math.floor(Math.random()* colors.length) //getting the index but not the value
+    return colors[randomColors] //getting only the value
+}
 
 //Creation of the square
-let sectionBoard = document.querySelector("section")
-let exemplarDiv //creation of the div
+let sectionBoard = document.querySelector("section") //targeting the section
+let exemplarDiv //var for the creation of the div
 
-for (let index = 0; index < 300; index++) { //creation of an amount of div
-    exemplarDiv = document.createElement("div")
-    sectionBoard.appendChild(exemplarDiv)
+for (let index = 0; index < 598; index++) { //creation of an amount of div (defined with the value)
+    exemplarDiv = document.createElement("div") //create an element "div"
+    sectionBoard.appendChild(exemplarDiv) //putting the div in the section linked by the parent-child
 }
+
 exemplarDiv = document.querySelectorAll("div") //take all the div created before
-Array.from(exemplarDiv).forEach(element => {
-    element.style.width="20px"
-    element.style.height="20px"
+
+exemplarDiv.forEach(element => { //giving the properties for all the div created (styling)
+    element.style.width="21px"
+    element.style.height="21px"
     element.style.backgroundColor="rgb(74, 67, 67)"
+    element.style.borderRadius="20px"
     element.style.display="flex"
     element.style.justifyContent="space-between"
     // element.style.margin="3px"
     element.style.border="none"
 });
 
+//Animation effect with the mouse : for each div we'll target the element included with an listener of the event with the two events (1-Mouseover, 2-Mouseout)
+exemplarDiv.forEach(element => {
+    element.addEventListener('mouseover', () =>{
+        element.style.transition= " " //with an empty string for the transition, the transition after the mouseout will be more smooth
+        element.style.backgroundColor= mixcolor()
+    })  
+    element.addEventListener('mouseout', () =>{
+        element.style.transition= "all 0.4s ease"
+        element.style.backgroundColor= "rgb(74, 67, 67)"
+    })  
+})
