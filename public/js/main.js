@@ -14,11 +14,11 @@ function mixcolor() {
     return colors[randomColors] //getting only the value
 }
 
-//Creation of the square
+//Creation of all the little bubbles/squares initially
 let sectionBoard = document.querySelector("section") //targeting the section
 let exemplarDiv //var for the creation of the div
 
-for (let index = 0; index < 598; index++) { //creation of an amount of div (defined with the value)
+for (let index = 0; index < 598; index++) { //creation of a fixed amount of div (defined with the value)
     exemplarDiv = document.createElement("div") //create an element "div"
     sectionBoard.appendChild(exemplarDiv) //putting the div in the section linked by the parent-child
 }
@@ -32,7 +32,6 @@ exemplarDiv.forEach(element => { //giving the properties for all the div created
     element.style.borderRadius="20px"
     element.style.display="flex"
     element.style.justifyContent="space-between"
-    // element.style.margin="3px"
     element.style.border="none"
 });
 
@@ -43,7 +42,7 @@ exemplarDiv.forEach(element => {
         element.style.backgroundColor= mixcolor()
     })  
     element.addEventListener('mouseout', () =>{
-        element.style.transition= "all 1.6s ease"
-        element.style.backgroundColor= "rgb(74, 67, 67)"
+        element.style.transition= "all 2s ease"
+        element.style.backgroundColor= "rgb(74, 67, 67)" //reset to the initial color for the background
     })  
 })

@@ -8,7 +8,6 @@ body{
     /* justify-content: center; */
     position: relative;
     margin-top: 20px;
-
 }
 
 section{
@@ -23,13 +22,11 @@ section{
     padding:3px;
     position: fixed;
     padding-top: 70px;
-
 }
 
 #iceCream{
     animation: bouncing 1s ease infinite alternate;
     animation-name:disco ;
-
 }
 
 @keyframes disco{
