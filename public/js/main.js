@@ -1,8 +1,8 @@
 //Styling the title
-let titleIcecream = document.querySelector("h1")
+let titleIcecream = document.querySelector("#iceCream")
 titleIcecream.style.fontFamily="'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif"
 titleIcecream.style.fontWeight="bold"
-titleIcecream.style.textShadow="#E96F92 1px 0 10px"
+titleIcecream.style.textShadow="#E96F92 10px 0 10px"
 titleIcecream.style.color="white"
 
 //Liste of defined colors
@@ -43,7 +43,7 @@ exemplarDiv.forEach(element => {
         element.style.backgroundColor= mixcolor()
     })  
     element.addEventListener('mouseout', () =>{
-        element.style.transition= "all 0.4s ease"
+        element.style.transition= "all 1.6s ease"
         element.style.backgroundColor= "rgb(74, 67, 67)"
     })  
 })
